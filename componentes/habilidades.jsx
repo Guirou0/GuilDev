@@ -28,7 +28,7 @@ const Habilidades = ({page, setPage}) => {
         },
         {
             nome: 'Racket',
-            url: '/racket.png'
+            url: '/GuilDev/racket.png'
         }
     ]
 
