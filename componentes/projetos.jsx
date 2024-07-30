@@ -91,7 +91,7 @@ const Projetos = ({page, setPage}) => {
                 scrollbar={{ draggable: true }}
                 >
                     {modalProject.fotos.map((foto, i)=> {
-                        return <SwiperSlide key={i}><img alt='foto' style={{width: '85vw', height: '85vh', position: 'relative', left: '50%', transform: 'translateX(-50%)'}} src={`/${modalProject.nome}/${foto}`} /></SwiperSlide>
+                        return <SwiperSlide key={i}><img alt='foto' style={{width: '85vw', height: '85vh', position: 'relative', left: '50%', transform: 'translateX(-50%)'}} src={`/GuilDev/${modalProject.nome}/${foto}`} /></SwiperSlide>
                     })}
                 </Swiper>: <></>}
 
@@ -235,7 +235,7 @@ const Projetos = ({page, setPage}) => {
 
         return (
             <motion.div className={styles.projeto} style={{borderColor: paths.color}} variants={projectVariant} >
-                <img alt='foto' src={`/${paths.nome}/${paths.fotos[0]}`} onClick={(e)=>{
+                <img alt='foto' src={`/GuilDev/${paths.nome}/${paths.fotos[0]}`} onClick={(e)=>{
                     e.preventDefault();
                     openModalWith(paths)}
                     }/>
