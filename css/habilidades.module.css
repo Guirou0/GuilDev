@@ -1,0 +1,50 @@
+.habilidades{
+    width: 99.5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Electrolize', sans-serif;
+}
+
+.linguagens, .lf, .ferramentas{
+    width: 90%;
+    height: 30%;
+    padding: 10px;
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.habilidades h1{
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.2rem, 2.2vw, 3vw);
+}
+
+.habilidades h1::before{
+    display: inline-block;
+    content: "";
+    height: 50px;
+    width: 50px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+    filter: contrast(20%);
+}
+
+.linguagens h1::before{
+    background-image: url('/lang.png');
+}
+
+.lf h1::before{
+    background-image: url('/lib.png');
+}
+
+.ferramentas h1::before{
+    background-image: url('/frame.png');
+}
+

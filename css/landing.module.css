@@ -1,0 +1,149 @@
+.sobre{
+    width: 100%;
+    height: 100vh;
+    margin-top: 10vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.info{
+    position: absolute;
+    display: flex;
+    top: 0;
+    gap: 20px;
+    width: 100%;
+    height: 70%;
+    padding: 40px;
+    font-family: "Electrolize", sans-serif;
+    z-index: 15;
+    animation: load2 2s ease-out;
+}
+
+.text, .photo{
+    width: 50%;
+    height: 100%;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--color-orange);
+    color: var(--color-blue);
+    font-family: 'Bangers', system-ui;
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 7.5vw);
+    overflow: hidden;
+    
+}
+
+
+.photo{
+    background-image: url('/guil-astronauta.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    animation: spin 24s linear infinite;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.backParallax{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-position: bottom;
+    background-size: 100% 100%;
+    background-image: url('/BackgroundParallax.png');
+    width: 100%;
+    height: 100%;
+    animation: load 1.1s ease-out;
+}
+
+.bottomParallax{
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    background-position: bottom;
+    background-size: 101% 100%;
+    background-image: url('/BottomParallax.png');
+    width: 100%;
+    height: 101%;
+    animation: load 1s ease-out, bright 1s ease-out;
+}
+
+.enterprise{
+    position: relative;
+    background-image: url('/enterprise.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    width: 30vw;
+    height: 30vh;
+    right: -60%;
+    top: -40%;
+    z-index: 23;
+    filter: brightness(2);
+}
+
+
+
+@keyframes bright {
+    0%{
+        filter: brightness(0%);
+    }
+    50%{
+        filter: brightness(20%);
+    }
+}
+
+@keyframes load {
+    0%{
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes load2 {
+    0%{
+        transform: translateY(100vh);
+    }
+    60%{
+        transform: translateY(100vh);
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .info{
+        flex-direction: column;
+        gap: 0px;
+        top: -12%;
+    }
+    .text, .photo{
+        width: 100%;
+        height: 50%;
+    }
+    .text{
+        padding-top: 60px;
+    }
+    .enterprise{
+        width: 60vw;
+        height: 60vh;
+        right: -70%;
+    }
+}

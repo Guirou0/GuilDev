@@ -1,0 +1,148 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    box-shadow: 2px 2px 5px var(--color-orange);
+    z-index: 25;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: fadeUp 1s ease-out;
+}
+
+.popup{
+    font-size: clamp(.8rem, 1.5vw, 2vw);
+    font-family: 'Electrolize', sans-serif;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 20px;
+    animation: appear .2s ease-out;
+}
+
+
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    font-family: 'Electrolize', sans-serif;
+    font-size: clamp(.8rem, 1.5vw, 2vw);
+    font-weight: 600;
+}
+
+.sobre::before{
+    background-image: url('/face.png');
+}
+
+.habilidades::before{
+    background-image: url('/bolt.png');
+}
+
+.projetos::before{
+    background-image: url('/work.png');
+}
+
+.navigation nav{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform .4s ease-out;
+    animation: appear 1s ease-out;
+}
+
+.navigation nav:hover{
+    transform: scale(1.1);
+}
+
+.navigation nav::before{
+    display: inline-block;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    margin-right: 3px;
+    filter: contrast(20%);
+}
+
+.themebox{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    border: 2px solid var(--color-orange);
+}
+
+.themeround{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin-left: 0px;
+    transition: margin-left .4s ease-out;
+    background-color: var(--color-blue);
+}
+
+.darkicon, .lighticon{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+}
+
+.lighticon{
+    margin-left: 55px;
+    background-image: url('/light.png');
+}
+
+.darkicon{
+    background-image: url('/dark.png');
+}
+
+input:checked + .themeround{
+    margin-left: 55px;
+}
+
+.themebox input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@keyframes fadeUp {
+    0%{
+        padding-left: 150%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navigation{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        box-shadow: 0px 2px 10px var(--color-blue);
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .navbar{
+        height: 15vh;
+    }
+}

@@ -1,0 +1,55 @@
+.icon{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: 'Bangers', system-ui;
+    height: 100%;
+}
+
+.logo{
+    height: 100%;
+    transition: transform .8s ease-in-out;
+}
+
+.logo:hover{
+    transform: rotate(360deg);
+}
+
+.icon h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+
+.icon p:first-of-type{
+    color: var(--color-orange);
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--color-blue);
+}
+
+.icon p:last-of-type{
+    color: var(--color-blue);
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--color-orange);
+    display: flex;
+    align-items: center;
+}
+
+.icon p:last-of-type::before{
+    display: inline-block;
+    content: "";
+    height: 25px;
+    width: 25px;
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 2px;
+    transition: transform .7s ease-out, margin-right .7s ease-out;
+}
+
+.icon h2:hover  p:last-of-type::before{
+    transform: rotate(360deg);
+    margin-right: 30px;
+}

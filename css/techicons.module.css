@@ -1,0 +1,41 @@
+.techicons{
+    width: 99%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.techicons::-webkit-scrollbar{
+    height: 5px;
+}
+
+.techicons::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    border: 1px solid var(--color-orange);
+    background-color: var(--color-blue);
+}
+
+.icon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    width: 200px;
+    min-width: 200px;
+    height: 75px;
+    border: 5px solid;
+    border-radius: 5px;
+}
+
+.icon img{
+    object-fit: contain;
+    width: 50%;
+    height: 85%;
+    
+}

@@ -1,0 +1,139 @@
+.sobre{
+    width: 99.5%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text, .photo{
+    width: 45%;
+    height: 80%;
+}
+
+.text{
+    border: 10px outset var(--color-orange);
+    font-family: 'Electrolize', sans-serif;
+    font-size: clamp(.6rem, 1.4vw, 2vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.text p{
+    text-align: justify;
+    text-indent: 1.25cm;
+    font-weight: 600;
+    padding: 7px;
+}
+
+.text h1{
+    width: max-content;
+    padding-right: 5px;
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 1s steps(1, end) infinite;
+}
+
+.text h1 a{
+    animation: cor 5s linear infinite;
+}
+
+.social{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    align-items: center;
+}
+
+.socialcard{
+    height: 80%;
+    width: 20%;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+
+.socialcard::before{
+    display: inline-block;
+    content: "";
+    height: 90%;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: 50%;
+    margin-right: -25px;
+    transition: transform .3s ease-out;
+}
+
+.socialcard:nth-child(1)::before{
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg');
+}
+
+.socialcard:nth-child(2)::before{
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg');
+}
+.socialcard:hover::before{
+    transform: scale(1.1);
+}
+
+@keyframes type {
+    0%, 100%{
+        border-right: 4px solid;
+    }
+    50%{
+        border-right: 0px solid;
+    }
+}
+
+@keyframes cor {
+    0%, 100%{
+        color: var(--color-blue);
+        text-shadow: 1px 0px 5px var(--color-orange);
+    }
+    50%{
+        color: var(--color-orange);
+        text-shadow: 1px 1px 5px var(--color-blue);
+    }
+}
+
+.photo{
+    border: 10px inset var(--color-blue);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('/logo.png'), linear-gradient( #191970 17%, #004995, #1575b0, #56a0c5, #96cad9, #aad8e3, #bee6ee, #d3f4f9, #beebf7, #a9e2f8, #96d9f9, #87cefa);;
+    border-radius: 100%;
+    overflow: visible;
+}
+
+@media only screen and (max-width: 800px) {
+    .sobre{
+        flex-direction: column;
+    }
+    .text, .photo{
+        width: 80%;
+        height: 45%;
+    }
+    .socialcard{
+        width: 35%;
+    }
+    .socialcard::before{
+        background-size: contain;
+        margin-right: -15px;
+    }
+}
