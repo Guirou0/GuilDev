@@ -136,4 +136,7 @@
         background-size: contain;
         margin-right: -15px;
     }
+    .photo{
+        border-radius: 20px;
+    }
 }

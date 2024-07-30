@@ -76,6 +76,7 @@ const Projetos = ({page, setPage}) => {
         return (
             <motion.div initial={'close'} animate={modalState} variants={modalVariant} className={styles.modal} style={{backgroundColor: theme}} >
                 <button onClick={(e)=>{
+                    setPage('sobre')
                     setModalProject(null)
                     setModalState('close')
                 }}></button>
@@ -244,7 +245,7 @@ const Projetos = ({page, setPage}) => {
                     <p>{desc}</p>
                     <ul>
                         {paths.tools.map((tool, i) => {
-                            return <div className={styles.tools} key={i} style={{backgroundImage: `url(${icons[tool]['url']})`}}></div>
+                            return <div className={styles.tools} key={i} title={icons[tool]['nome']} style={{backgroundImage: `url(${icons[tool]['url']})`}}></div>
                         })}
                     </ul>
                 </div>

@@ -45,7 +45,7 @@ const Sobre = ({page, setPage}) => {
                 </motion.div>
             </motion.div>
             <motion.div className={styles.photo} variants={{'hide': {x: 900, rotate: 20}, 'show': {x:0, rotate: 0, transition: {type: 'spring', duration: 2, delay: .5}}}}>
-                <Stars />
+               <Stars />
             </motion.div>
         </motion.div>
     )
